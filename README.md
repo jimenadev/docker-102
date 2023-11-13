@@ -144,7 +144,10 @@ docker compose up -d --build
 ```
 
 Revisa los logs para asegurarte que todo funciona correctamente.
+OK
 
 Si todo está bien deberías navegar a la aplicación y ver los dos libros que ingresamos en la migración.
+OK
 
 Agrega todos los cambios y has un git commit y luego un push para uw queden en tu fork.
+OK
