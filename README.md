@@ -42,7 +42,10 @@ Revisa que todo está bien navegando a la dirección `localhost:8000`.
 ### Preguntas
 
 ¿Qué pasa si cambias el valor de la variable PORT?
+Deja de publicarse la app
+
 ¿Qué cambios debes hacer para cambier el port a 8080?
+modificar docker compose la variable PORTS y el arhcivo .env
 
 
 ## Paso 2
@@ -72,20 +75,33 @@ La opción `-d` permite dejar ejecutando los servicios y libera la consola.
 Ejecuta `docker ps`. 
 
 ¿Qué obtienes?.
+Muestra un listado de los contenedores en ejecución, así como enumerar cierta información básica acerca de estos, tales como su ID y nombre de contenedor, el nombre de la imagen, la hora en la que se creó el contenedor o el estado en el que se encuentra, entre otros
 
 Ejecuta `docker images`. 
 
 ¿Cuál es el tamaño de la imagen del servidor flask?
+131MB
 
 ¿Cuál es el tamaño de la imagen postgres?
+438MB
 
 ¿Cuándo fueron creadas cada una de las imágenes?
+docker-102-server   latest    6dbd6106c5d7   5 hours ago    131MB
+postgres            latest    6f5c4e69fd12   2 months ago   438MB
+
 
 Ahora ejecuta `docker compose logs -f`, esto te permite revisar el log de los contenedores.
 
 Si navegas hacia la aplicación (http://localhost:8000/) se produce un error, revisa el log.
 
 ¿Cuál es la causa del error?
+No esta creada la tabla books en esta base de datos.
+
+error que arroja:
+psycopg2.errors.UndefinedTable: relation "books" does not exist
+docker-102-server-1  | LINE 1: SELECT * FROM books;
+
+
 
 Cierra el log presionando `control-c`, luego detén la aplicación con este comando:
 
